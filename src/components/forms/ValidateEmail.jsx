@@ -13,7 +13,9 @@ const ValidateEmail = ()=>{
     return(
         <form onSubmit={formik.handleSubmit} >
             <input
+                id="email"
                 type="email"
+                name="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
             />
