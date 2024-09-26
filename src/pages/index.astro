@@ -1,11 +1,16 @@
 ---
+import Button from '../components/Button.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Todo para tu bebe ">
 	<main>
 		<h1>todo para tu bebe</h1>
 		<h3>Hacemos envios a dominicilio atravez de mercado pago</h3>
+		<div>
+			<Button color='default' url='/home' children="ingresar" />
+			<Button color='gradient' url='/home' children="registrarse" />
+		</div>
 	</main>
 </Layout>
 
