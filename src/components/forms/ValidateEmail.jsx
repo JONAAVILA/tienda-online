@@ -17,7 +17,6 @@ const ValidateEmail = ()=>{
                 display:'flex',
                 alignItems:'center',
                 justifyContent:'center',
-                marginTop:'15px'
             }}
         >
             <form onSubmit={formik.handleSubmit} >

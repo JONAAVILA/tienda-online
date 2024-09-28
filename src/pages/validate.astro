@@ -1,14 +1,18 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import ValidateEmail from '../components/forms/ValidateEmail
+import ValidateEmail from '../components/forms/ValidateEmail'
 ---
 <Layout title="Validate" >
     <section>
         <Navbar/>
-        <h2>registrarse</h2>
-        <h3>vamos a pedirte el email para validar tu identidad</h3>
-        <ValidateEmail client:only />
+        <div class="box_validate" >
+            <div class="tittle" >
+                <h2>registrarse</h2>
+                <p>vamos a pedirte el email para validar tu identidad</p>
+            </div>
+            <ValidateEmail client:only />
+        </div>
     </section>
 </Layout>
 
@@ -20,5 +24,18 @@ import ValidateEmail from '../components/forms/ValidateEmail
         align-items: center;
         height: 90vh;
         width: 100%;
+    }
+    .tittle{
+        margin-right: 20px;
+        h2,p{
+            margin: 0;
+        }
+    }
+    .box_validate{
+        display: flex;
+        align-items: center;
+        border: solid 1px #ffffff;
+        padding: 1rem;
+        border-radius: 20px;
     }
 </style>
