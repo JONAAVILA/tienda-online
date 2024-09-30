@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/astro/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import ValidateEmail from '../components/react/forms/ValidateEmail'
+import App from '../App';
 ---
 <Layout title="Validate" >
     <section>
@@ -11,7 +11,7 @@ import ValidateEmail from '../components/react/forms/ValidateEmail'
                 <h2>registrarse</h2>
                 <p>vamos a pedirte el email para validar tu identidad</p>
             </div>
-            <ValidateEmail client:only="react" />
+            <App page={'validate'} client:only="'react" />
         </div>
     </section>
 </Layout>

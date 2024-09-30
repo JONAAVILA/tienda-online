@@ -1,3 +1,4 @@
+import { useFormik } from "formik"
 
 const CreateUser = ()=>{
     const formik = useFormik({
@@ -11,7 +12,12 @@ const CreateUser = ()=>{
 
     return(
         <form>
-
+            <input
+                type="text" 
+                placeholder="nombre"
+            />
         </form>
     )
 }
+
+export default CreateUser
