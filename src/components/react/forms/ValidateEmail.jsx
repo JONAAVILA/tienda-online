@@ -13,7 +13,7 @@ const ValidateEmail = ()=>{
             const res = await checkEmail(email)
             console.log(res)
         }
-    })
+    })  
 
     console.log('formik', formik.values)
 
@@ -25,7 +25,7 @@ const ValidateEmail = ()=>{
                 justifyContent:'center',
             }}
         >
-            <form>
+            <form onSubmit={formik.handleSubmit} >
                 <input
                     id="email"
                     type="email"
@@ -34,8 +34,9 @@ const ValidateEmail = ()=>{
                     onChange={formik.handleChange}
                     value={formik.values.email}
                 />
+                <button type="submit">submit</button>
             </form>
-            <ButtonCircle onSubmit={formik.handleSubmit} />
+
         </div>
     )
 }
