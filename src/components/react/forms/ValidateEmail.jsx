@@ -1,5 +1,5 @@
 import { useFormik } from "formik"
-import ButtonCircle from "../buttons/reactButtons/ButtonCircle"
+import ButtonCircle from "../buttons/ButtonCircle"
 
 const ValidateEmail = ()=>{
     const formik = useFormik({
