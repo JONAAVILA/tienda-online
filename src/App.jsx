@@ -5,7 +5,7 @@ import store from "./redux/store";
 
 const App = ({page})=>{
     return(
-        <>  
+        <   >  
         <Provider store={store} >
             {page === 'validate' && <ValidateEmail/>}
             {page === 'create' && <CreateUser/>}

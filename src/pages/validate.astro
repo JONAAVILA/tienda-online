@@ -12,9 +12,7 @@ export const prerender = true
                 <h2>registrarse</h2>
                 <p>vamos a pedirte el email para validar tu identidad</p>
             </div>
-            <App page={'validate'} server:defer >
-                <span slot="fallback" >cargando..</span>
-            </App>
+            <App page={'validate'} server:defer />
         </div>
     </section>
 </Layout>

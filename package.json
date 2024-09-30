@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/react": "^3.6.2",
     "astro": "^4.15.9",
+    "axios": "^1.7.7",
     "formik": "^2.4.6",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1",

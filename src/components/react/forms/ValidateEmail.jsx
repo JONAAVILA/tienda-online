@@ -1,15 +1,21 @@
 import { useFormik } from "formik"
 import ButtonCircle from "../buttons/ButtonCircle"
+import checkEmail from "../../../adapters/checkEmail"
 
 const ValidateEmail = ()=>{
     const formik = useFormik({
         initialValues:{
             email:''
         },
-        onSubmit:()=>{
-
+        onSubmit:async (values)=>{
+            console.log(values.email)
+            const email = values.email
+            const res = await checkEmail(email)
+            console.log(res)
         }
     })
+
+    console.log('formik', formik.values)
 
     return(
         <div
@@ -19,7 +25,7 @@ const ValidateEmail = ()=>{
                 justifyContent:'center',
             }}
         >
-            <form onSubmit={formik.handleSubmit} >
+            <form>
                 <input
                     id="email"
                     type="email"
@@ -29,7 +35,7 @@ const ValidateEmail = ()=>{
                     value={formik.values.email}
                 />
             </form>
-            <ButtonCircle path={'/createUser'} />
+            <ButtonCircle onSubmit={formik.handleSubmit} />
         </div>
     )
 }
