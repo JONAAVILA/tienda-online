@@ -2,6 +2,7 @@
 import Navbar from "../components/astro/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import App from '../App';
+export const prerender = true
 ---
 <Layout title="Validate" >
     <section>
@@ -11,7 +12,9 @@ import App from '../App';
                 <h2>registrarse</h2>
                 <p>vamos a pedirte el email para validar tu identidad</p>
             </div>
-            <App page={'validate'} client:only="'react" />
+            <App page={'validate'} server:defer >
+                <span slot="fallback" >cargando..</span>
+            </App>
         </div>
     </section>
 </Layout>
