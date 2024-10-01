@@ -9,8 +9,8 @@ export const prerender = true
         <Navbar/>
         <div class="box_validate" >
             <div class="tittle" >
-                <h2>registrarse</h2>
-                <p>vamos a pedirte el email para validar tu identidad</p>
+                <h2>valida tu email</h2>
+                <p>vamos a verificar tu email para que puedas crear tu usuario o recupar tu constraseña</p>
             </div>
             <App page={'validate'} client:only="react" >
                 <span slot="fallback" >cargando...</span>
@@ -32,6 +32,7 @@ export const prerender = true
         margin-right: 20px;
         p{
             margin: 0;
+            width: 400px;
         }
     }
     .box_validate{

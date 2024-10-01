@@ -18,14 +18,15 @@ const ValidateEmail = ()=>{
     console.log('formik', formik.values)
 
     return(
-        <div
-            style={{
-                display:'flex',
-                alignItems:'center',
-                justifyContent:'center',
-            }}
-        >
-            <form onSubmit={formik.handleSubmit} >
+        <div>
+            <form 
+                onSubmit={formik.handleSubmit} 
+                style={{
+                    display:'flex',
+                    alignItems:'center',
+                    justifyContent:'center',
+                }}
+            >
                 <input
                     id="email"
                     type="email"
@@ -34,9 +35,8 @@ const ValidateEmail = ()=>{
                     onChange={formik.handleChange}
                     value={formik.values.email}
                 />
-                <button type="submit">submit</button>
+            <ButtonCircle type="submit" />
             </form>
-
         </div>
     )
 }
