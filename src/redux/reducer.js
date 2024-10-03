@@ -1,7 +1,9 @@
 import { SAVE_EMAIL } from "./actions/actionsTypes";
 
 const initialState = {
-    email:''
+    user:{
+        email:''
+    }
 }
 
 const rootReducer = (state = initialState, action)=>{
@@ -9,7 +11,10 @@ const rootReducer = (state = initialState, action)=>{
         case SAVE_EMAIL:
             return{
                 ...state,
-                email:action.payload
+                user:{
+                    ...state.user,
+                    email:action.payload
+                }
             }
         default:
             return state

@@ -1,6 +1,9 @@
 import { useFormik } from "formik"
+import { useSelector } from "react-redux"
 
 const CreateUser = ()=>{
+    const email = useSelector(state => state.user)
+
     const formik = useFormik({
         initialValues:{
             email:'',
@@ -13,7 +16,8 @@ const CreateUser = ()=>{
     return(
         <form>
             <input
-                type="text" 
+                type="text"
+                value={formik.value.email}
                 placeholder="nombre"
             />
         </form>
