@@ -1,11 +1,23 @@
 ---
-
+import Navbar from "../components/astro/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<section>
-
-</section>
+<Layout title="registrarse" >
+    <section>
+        <Navbar/>
+        <h2>registrate</h2>
+        <p>completa los datos para crear tu usuario</p>
+    </section>
+</Layout>
 
 <style>
-    
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        width: 100%;
+    }
 </style>
