@@ -1,0 +1,12 @@
+#user_form{
+    display: flex;
+    flex-direction: column;
+}
+#box_create_form{
+    padding: 1rem;
+    border: solid 1px #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-block: 10px;
+}

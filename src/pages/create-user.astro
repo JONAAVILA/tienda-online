@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/astro/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
+import App from '../App'
 ---
 
 <Layout title="registrarse" >
@@ -8,6 +9,7 @@ import Layout from "../layouts/Layout.astro";
         <Navbar/>
         <h2>registrate</h2>
         <p>completa los datos para crear tu usuario</p>
+        <App page={'create'} />
     </section>
 </Layout>
 
@@ -15,9 +17,11 @@ import Layout from "../layouts/Layout.astro";
     section{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        height: 90vh;
+        margin-top: 6rem;
+        margin-bottom: 4rem;
         width: 100%;
+        overflow: hidden;
     }
 </style>

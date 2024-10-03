@@ -1,5 +1,5 @@
 import ValidateEmail from "./components/react/forms/ValidateEmail";
-import CreateUser from "./components/react/forms/CreateUser";
+import CreateUser from "./components/react/forms/userCreate/UserCreate";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
