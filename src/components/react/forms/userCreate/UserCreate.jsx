@@ -1,6 +1,7 @@
 import { useFormik } from "formik"
 import { useSelector } from "react-redux"
 import './userCreate.css';
+import Button from "../../buttons/customButton/Button";
 
 const UserCreate = ()=>{
     const email = useSelector(state => state.user.email)
@@ -101,6 +102,7 @@ const UserCreate = ()=>{
                     placeholder="país"
                 />
             </div>
+            <Button type='submit' color={'gradient'} children={'crear'} />
         </form>
     )
 }
