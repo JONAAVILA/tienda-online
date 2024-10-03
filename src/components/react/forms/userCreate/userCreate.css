@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    p{
+        font-size: 10px;
+    }
 }
 #box_create_form{
     padding: 1rem;

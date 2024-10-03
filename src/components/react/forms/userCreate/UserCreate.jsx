@@ -2,6 +2,8 @@ import { useFormik } from "formik"
 import { useSelector } from "react-redux"
 import './userCreate.css';
 import Button from "../../buttons/customButton/Button";
+import createUser from '../../../../adapters/postUser';
+import postUser from "../../../../adapters/postUser";
 
 const UserCreate = ()=>{
     const email = useSelector(state => state.user.email)
@@ -18,8 +20,9 @@ const UserCreate = ()=>{
             state:'',
             country:''
         },
-        onSubmit:()=>{
-
+        onSubmit: async (values)=>{
+            const res = await postUser(values)
+            console.log(res)
         }
     })
 
@@ -102,6 +105,7 @@ const UserCreate = ()=>{
                     placeholder="país"
                 />
             </div>
+            <p>cuando creas el usuario aceptas todos los terminos y condiciones.</p>
             <Button type='submit' color={'gradient'} children={'crear'} />
         </form>
     )
