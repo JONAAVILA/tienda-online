@@ -11,7 +11,7 @@ const ValidateEmail = ()=>{
             console.log(values.email)
             const email = values.email
             const res = await checkEmail(email)
-            console.log(res)
+            if(res) window.location.href = '/create-user'
         }
     })  
 
@@ -33,9 +33,10 @@ const ValidateEmail = ()=>{
                     name="email"
                     placeholder="email"
                     onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
                     value={formik.values.email}
                 />
-            <ButtonCircle type="submit" />
+                <ButtonCircle type="submit" />
             </form>
         </div>
     )
