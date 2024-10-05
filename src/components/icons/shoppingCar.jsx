@@ -2,7 +2,10 @@
 const ShoppingCar = ()=>{
     return(
         <svg
-            width="24"  
+            style={{
+                marginRight:'10px'
+            }}
+            width="24" 
             height="24"  
             viewBox="0 0 24 24"  
             fill="none"  

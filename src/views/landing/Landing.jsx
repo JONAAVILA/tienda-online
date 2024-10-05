@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../components/buttons/customButton/Button';
 import './landing.css';
 
@@ -9,7 +10,9 @@ const Landing = ()=>{
             <div className='landing_buttons' >
                 <Button color={'default'} children={'ingresar'} />
                 <p>or</p>
-                <Button color={'gradient'} children={'registrarse'} />
+                <Link to={'/validate'} >
+                    <Button color={'gradient'} children={'registrarse'} />
+                </Link>
             </div>
         </section>
     )
