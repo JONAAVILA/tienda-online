@@ -1,4 +1,4 @@
-import ShoppingCar from "../icons/shoppingCar"
+import ShoppingCar from "../icons/ShoppingCar"
 import './navbar.css'
 
 const Navbar = ()=>{
