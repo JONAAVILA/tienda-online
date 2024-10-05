@@ -1,11 +1,20 @@
 import { useFormik } from "formik"
 import './validateEmail.css'
 import ButtonCircle from  '../../components/buttons/ButtonCircle'
+import checkEmail from "../../adapters/checkEmail"
+import { useNavigate } from "react-router-dom"
 
 const ValidateEmail = ()=>{
+    const navigate = useNavigate()
+
     const formik = useFormik({
         initialValues:{
             email:''
+        },
+        onSubmit: async (values)=>{
+            const check = await checkEmail(values)
+            console.log(check)
+            if(check === false) navigate('/')
         }
     })
 
@@ -23,7 +32,7 @@ const ValidateEmail = ()=>{
                         name="email"
                         onChange={formik.handleChange}
                     />
-                    <ButtonCircle/>
+                    <ButtonCircle type='submit' />
                 </form>
             </div>
         </section>
