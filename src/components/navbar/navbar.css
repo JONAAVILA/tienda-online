@@ -1,0 +1,23 @@
+.navbar_section{
+    position: absolute;
+    display: flex;
+    right: 50%;
+    width: 1000px;
+    padding: 10px;
+    transform: translate(50%, 50% );
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background:radial-gradient(circle 220px at left top,#60B49E,#41AFCB,#A1CED9);
+}
+.nav_box_pages{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
