@@ -1,6 +1,6 @@
 import { useFormik } from "formik"
-import Button from '../../components/buttons/customButton/Button'
 import './validateEmail.css'
+import ButtonCircle from  '../../components/buttons/ButtonCircle'
 
 const ValidateEmail = ()=>{
     const formik = useFormik({
@@ -11,8 +11,8 @@ const ValidateEmail = ()=>{
 
     return(
         <section className="validate_section" >
-            <div>
-                <h2>valida tu email</h2>
+            <div className="validate_tittle" >
+                <h1>valida tu email</h1>
                 <h2>vamos a verificar tu email para que puedas crear tu usuario o recupar tu constraseña</h2>
             </div>
             <div>
@@ -23,7 +23,7 @@ const ValidateEmail = ()=>{
                         name="email"
                         onChange={formik.handleChange}
                     />
-                    <Button color={'gradient'} children={'validar'} />
+                    <ButtonCircle/>
                 </form>
             </div>
         </section>
