@@ -14,7 +14,7 @@ const ValidateEmail = ()=>{
         onSubmit: async (values)=>{
             const check = await checkEmail(values)
             console.log(check)
-            if(check === false) navigate('/create')
+            if(check === 'access') navigate('/create')
         }
     })
 
@@ -27,7 +27,7 @@ const ValidateEmail = ()=>{
             <div>
                 <form onSubmit={formik.handleSubmit}>
                     <input
-                        type="text"
+                        type="email"
                         id="email"
                         name="email"
                         placeholder="email"

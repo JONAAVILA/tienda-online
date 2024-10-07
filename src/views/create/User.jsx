@@ -8,6 +8,7 @@ const User = ()=>{
             name:'',
             lastname:'',
             password:'',
+            phone:'',
             address:'',
             number:'',
             location:'',
@@ -27,70 +28,88 @@ const User = ()=>{
                 onSubmit={formik.handleSubmit}
                 className="create_form"
             >
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formik.values.name}
-                    placeholder="nombre"
-                    onChange={formik.handleChange}
-                />
-                <input
-                    type="text"
-                    id="lastname"
-                    name="lastname"
-                    value={formik.values.lastname}
-                    placeholder="apellido"
-                    onChange={formik.handleChange}
-                />
-                <input
-                    type="text"
-                    id="password"
-                    name="password"
-                    value={formik.values.password}
-                    placeholder="contraseña"
-                    onChange={formik.handleChange}
-                />
-                <input
-                    type="text"
-                    id="address"
-                    name="address"
-                    value={formik.values.address}
-                    placeholder="calle"
-                    onChange={formik.handleChange}
-                />
-                <input
-                    type="text"
-                    id="number"
-                    name="number"
-                    value={formik.values.number}
-                    placeholder="numero"
-                    onChange={formik.handleChange}
-                />
-                <input
-                    type="text"
-                    id="location"
-                    name="location"
-                    value={formik.values.location}
-                    placeholder="localidad"
-                    onChange={formik.handleChange}
-                />
-                <input
-                    type="text"
-                    id="state"
-                    name="state"
-                    value={formik.values.state}
-                    placeholder="provincia"
-                    onChange={formik.handleChange}
-                />
-                <input
-                    type="text"
-                    id="country"
-                    name="country"
-                    value={formik.values.country}
-                    placeholder="país"
-                    onChange={formik.handleChange}
-                />
+                <div className="create_box_form" >
+                    <h3>
+                        datos personales
+                    </h3>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formik.values.name}
+                        placeholder="nombre"
+                        onChange={formik.handleChange}
+                    />
+                    <input
+                        type="text"
+                        id="lastname"
+                        name="lastname"
+                        value={formik.values.lastname}
+                        placeholder="apellido"
+                        onChange={formik.handleChange}
+                    />
+                    <input
+                        type="text"
+                        id="password"
+                        name="password"
+                        value={formik.values.password}
+                        placeholder="contraseña"
+                        onChange={formik.handleChange}
+                    />
+                </div>
+                <div className="create_box_form" >
+                    <h3>
+                        datos de contacto
+                    </h3>
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        value={formik.values.phone}
+                        placeholder="telefono"
+                        onChange={formik.handleChange}
+                    />
+                    <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        value={formik.values.address}
+                        placeholder="calle"
+                        onChange={formik.handleChange}
+                    />
+                    <input
+                        type="text"
+                        id="number"
+                        name="number"
+                        value={formik.values.number}
+                        placeholder="numero"
+                        onChange={formik.handleChange}
+                    />
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        value={formik.values.location}
+                        placeholder="localidad"
+                        onChange={formik.handleChange}
+                    />
+                    <input
+                        type="text"
+                        id="state"
+                        name="state"
+                        value={formik.values.state}
+                        placeholder="provincia"
+                        onChange={formik.handleChange}
+                    />
+                    <input
+                        type="text"
+                        id="country"
+                        name="country"
+                        value={formik.values.country}
+                        placeholder="país"
+                        onChange={formik.handleChange}
+                    />
+                </div>
                 <Button
                     type='submit'
                     color={'gradient'}

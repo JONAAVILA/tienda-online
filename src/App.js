@@ -6,14 +6,14 @@ import User from './views/create/User';
 
 function App() {
   return (
-      <BrowserRouter>
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<Landing/>}/>
-          <Route path='/validate' element={<ValidateEmail/>}/>
-          <Route path='/create' element={<User/>}/>
-        </Routes>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Landing/>}/>
+        <Route path='/validate' element={<ValidateEmail/>}/>
+        <Route path='/create' element={<User/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

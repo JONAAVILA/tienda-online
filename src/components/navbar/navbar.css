@@ -1,5 +1,5 @@
 .navbar_section{
-    position: absolute;
+    position: fixed;
     display: flex;
     right: 50%;
     width: 1000px;
@@ -9,6 +9,15 @@
     background-color: #FFFFFF;
     justify-content: space-between;
     align-items: center;
+}
+.navbar_section::before{
+    z-index: 10;
+    position: absolute;
+    top: -100%;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: #e4e4e4d3;
 }
 .nav_profile{
     width: 40px;
