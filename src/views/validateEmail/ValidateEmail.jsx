@@ -30,6 +30,7 @@ const ValidateEmail = ()=>{
                         type="text"
                         id="email"
                         name="email"
+                        placeholder="email"
                         onChange={formik.handleChange}
                     />
                     <ButtonCircle type='submit' />

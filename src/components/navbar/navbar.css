@@ -14,7 +14,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background:radial-gradient(circle 220px at left top,#60B49E,#41AFCB,#A1CED9);
+    background:radial-gradient(circle 40px at left top,#60B49E,#41AFCB,#A1CED9);
 }
 .nav_box_pages{
     display: flex;
