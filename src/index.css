@@ -50,6 +50,7 @@ input{
   height: 20px;
   padding: 11px;
   width: 250px;
+  margin: 3px;
   color: #003550;
   border-radius: 20px;
 }

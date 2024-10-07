@@ -1,0 +1,12 @@
+.section_create{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.create_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

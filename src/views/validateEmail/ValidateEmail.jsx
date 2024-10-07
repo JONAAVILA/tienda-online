@@ -14,7 +14,7 @@ const ValidateEmail = ()=>{
         onSubmit: async (values)=>{
             const check = await checkEmail(values)
             console.log(check)
-            if(check === false) navigate('/')
+            if(check === false) navigate('/create')
         }
     })
 
