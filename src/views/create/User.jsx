@@ -1,12 +1,18 @@
 import { useFormik } from "formik"
 import Button from "../../components/buttons/customButton/Button"
 import './user.css'
+import postUser from "../../adapters/postUser"
+import { useSelector } from "react-redux"
 
 const User = ()=>{
+    const email = useSelector(state => state.user.email)
+    console.log('email:',email)
+
     const formik = useFormik({
         initialValues:{
             name:'',
-            lastname:'',
+            surname:'',
+            email:email,
             password:'',
             phone:'',
             address:'',
@@ -16,7 +22,7 @@ const User = ()=>{
             country:''
         },
         onSubmit: async (values)=>{
-            
+            await postUser(values)
         }
     })
 
@@ -42,9 +48,9 @@ const User = ()=>{
                     />
                     <input
                         type="text"
-                        id="lastname"
-                        name="lastname"
-                        value={formik.values.lastname}
+                        id="surname"
+                        name="surname"
+                        value={formik.values.surname}
                         placeholder="apellido"
                         onChange={formik.handleChange}
                     />

@@ -3,9 +3,12 @@ import './validateEmail.css'
 import ButtonCircle from  '../../components/buttons/ButtonCircle'
 import checkEmail from "../../adapters/checkEmail"
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import saveEmail from '../../redux/actions/actions'
 
 const ValidateEmail = ()=>{
     const navigate = useNavigate()
+    const dispath = useDispatch()
 
     const formik = useFormik({
         initialValues:{
@@ -14,6 +17,7 @@ const ValidateEmail = ()=>{
         onSubmit: async (values)=>{
             const check = await checkEmail(values)
             console.log(check)
+            dispath(saveEmail(values.email))
             if(check === 'access') navigate('/create')
         }
     })

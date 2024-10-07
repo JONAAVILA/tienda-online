@@ -8,6 +8,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+body::-webkit-scrollbar{
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: #0035508a;
+}
 h1{
   font-family: "Rozha One", serif;
   font-weight: 400;

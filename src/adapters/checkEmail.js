@@ -7,5 +7,6 @@ export default async function checkEmail(email){
     const res = await axios.post(URL,email,{
         withCredentials: true
     })
+    console.log('res',res.data)
     return res.data
 }
