@@ -29,9 +29,9 @@ const User = ()=>{
                 className="create_form"
             >
                 <div className="create_box_form" >
-                    <h3>
+                    <p>
                         datos personales
-                    </h3>
+                    </p>
                     <input
                         type="text"
                         id="name"
@@ -58,9 +58,9 @@ const User = ()=>{
                     />
                 </div>
                 <div className="create_box_form" >
-                    <h3>
+                    <p>
                         datos de contacto
-                    </h3>
+                    </p>
                     <input
                         type="text"
                         id="phone"
