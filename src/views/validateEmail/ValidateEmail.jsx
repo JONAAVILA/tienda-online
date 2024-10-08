@@ -6,8 +6,11 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import saveEmail from '../../redux/actions/actions'
 import { validateEmail } from "../../utils/validate"
+import LoadIcon from "../../components/icons/loader/loadIcon"
+import { useState } from "react"
 
 const ValidateEmail = ()=>{
+    const [loader, setloader] = useState(false)
     const navigate = useNavigate()
     const dispath = useDispatch()
 
@@ -17,10 +20,14 @@ const ValidateEmail = ()=>{
         },
         validationSchema:validateEmail,
         onSubmit: async (values)=>{
+            setloader(!loader)
             const check = await checkEmail(values)
             console.log(check)
             dispath(saveEmail(values.email))
-            if(check === 'access') navigate('/create')
+            if(check === 'access'){
+                setloader(!loader)
+                navigate('/create')
+            }
         }
     })
 
@@ -41,6 +48,7 @@ const ValidateEmail = ()=>{
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
+                        {loader && <LoadIcon/>}
                         {
                             formik.touched.email && 
                             formik.errors.email && 
