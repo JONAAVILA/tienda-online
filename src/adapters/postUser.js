@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const URL = 'https://tienda-online-backend-riqf.onrender.com/singin'
-// const URL = 'http://localhost:3000/singin'
+// const URL = 'https://tienda-online-backend-riqf.onrender.com/singin'
+const URL = 'http://localhost:3000/singin'
 
 export default async function postUser (values){
     try {
@@ -10,6 +10,6 @@ export default async function postUser (values){
         })
         console.log(user.data)
     } catch (error) {
-        console.log({error})
+        console.log(error.response.data.error)
     }
 }

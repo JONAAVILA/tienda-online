@@ -6,7 +6,6 @@ import { useSelector } from "react-redux"
 
 const User = ()=>{
     const email = useSelector(state => state.user.email)
-    console.log('email:',email)
 
     const formik = useFormik({
         initialValues:{
