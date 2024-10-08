@@ -24,7 +24,7 @@ const ValidateEmail = ()=>{
             const check = await checkEmail(values)
             console.log(check)
             dispath(saveEmail(values.email))
-            if(check === 'access'){
+            if(check){
                 setloader(!loader)
                 navigate('/create')
             }
