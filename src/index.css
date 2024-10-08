@@ -30,6 +30,13 @@ h2{
   margin: 0;
   font-size: 1rem;
 }
+h4{
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight:700;
+  font-size: .7rem;
+}
 button{
   outline: none;
   border: none;
@@ -57,7 +64,7 @@ input{
   border: none;
   height: 20px;
   padding: 11px;
-  width: 250px;
+  width: 300px;
   margin: 3px;
   color: #003550;
   border-radius: 20px;

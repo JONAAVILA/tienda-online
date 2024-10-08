@@ -9,6 +9,7 @@ export default async function postUser (values){
             withCredentials:true
         })
         console.log(user.data)
+        return user
     } catch (error) {
         console.log(error.response.data.error)
     }

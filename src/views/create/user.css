@@ -5,6 +5,23 @@
     align-items: center;
     margin-top: 7rem;
     margin-bottom: 1rem;
+    h1{
+        font-size: 3rem;
+    }
+}
+.user_box_loader{
+    position: fixed;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+.form_user_error{
+    height: 10px;
+    p{
+        font-size: .6rem;
+        color: #ff6262;
+        padding-left: 12px;
+    }
 }
 .create_form{
     display: flex;
@@ -17,7 +34,4 @@
     flex-direction: column;
     align-items: left;
     padding: 10px;
-    p{
-        padding: 10px;
-    }
 }

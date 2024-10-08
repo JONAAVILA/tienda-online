@@ -48,7 +48,9 @@ const ValidateEmail = ()=>{
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
-                        {loader && <LoadIcon/>}
+                        <div className="email_box_loader" >
+                            {loader && <LoadIcon size={'35'} />}
+                        </div>
                         {
                             formik.touched.email && 
                             formik.errors.email && 

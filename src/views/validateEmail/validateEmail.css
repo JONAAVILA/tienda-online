@@ -30,9 +30,15 @@
     p{  
         position: absolute;
         z-index: 10;
-        font-size: .7rem;
+        font-size: .6rem;
         color: #ff6262;
         bottom: -15px;
         left: 15px;
     }
+}
+.email_box_loader{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-45%);
 }

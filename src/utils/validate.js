@@ -35,7 +35,7 @@ export const validateUser = Yup.object().shape({
     phone:Yup.string()
         .min(3,'El teléfono es muy corto')
         .max(30,'El teléfono es demasiado largo')
-        .matches('^+$','Formato inválido')
+        .matches('^[0-9- ]+$','Formato inválido')
         .required('El teléfono es requerido'),
     address:Yup.string()
         .min(3)
@@ -55,7 +55,7 @@ export const validateUser = Yup.object().shape({
     state:Yup.string()
         .min(3)
         .max(40)
-        .matches('^[a-zA-Z0-9.,]+$','Formato inválido')
+        .matches('^[a-zA-Z0-9 .,]+$','Formato inválido')
         .required('La provincia es requerida'),
     country:Yup.string()
         .min(3)

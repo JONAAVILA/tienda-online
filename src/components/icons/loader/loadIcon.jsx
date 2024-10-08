@@ -1,19 +1,15 @@
 import { ping } from 'ldrs'
 
-const LoadIcon = ()=>{
+const LoadIcon = ({size})=>{
     ping.register()
     return(
-        <div style={{
-            position:'absolute',
-            right:'10px',
-            top:'6px',
-        }} >
+        <>
             <l-ping
-            size="35"
+            size={size}
             speed="3" 
             color="#003550" 
             ></l-ping>
-        </div>
+        </>
     )
 }
 
