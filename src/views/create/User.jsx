@@ -20,6 +20,7 @@ const User = ()=>{
             state:'',
             country:''
         },
+        validate:'',
         onSubmit: async (values)=>{
             await postUser(values)
         }
@@ -44,7 +45,9 @@ const User = ()=>{
                         value={formik.values.name}
                         placeholder="nombre"
                         onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
                     />
+                    {formik.touched.name && formik.errors.name && <p>{formik.errors.name}</p>}
                     <input
                         type="text"
                         id="surname"

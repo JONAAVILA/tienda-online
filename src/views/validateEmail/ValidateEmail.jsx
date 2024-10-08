@@ -5,6 +5,7 @@ import checkEmail from "../../adapters/checkEmail"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import saveEmail from '../../redux/actions/actions'
+import { validateEmail } from "../../utils/validate"
 
 const ValidateEmail = ()=>{
     const navigate = useNavigate()
@@ -14,6 +15,7 @@ const ValidateEmail = ()=>{
         initialValues:{
             email:''
         },
+        validationSchema:validateEmail,
         onSubmit: async (values)=>{
             const check = await checkEmail(values)
             console.log(check)
@@ -29,14 +31,24 @@ const ValidateEmail = ()=>{
                 <h2>vamos a verificar tu email para que puedas crear tu usuario o recupar tu constraseña</h2>
             </div>
             <div>
-                <form onSubmit={formik.handleSubmit}>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="email"
-                        onChange={formik.handleChange}
-                    />
+                <form className="email_form" onSubmit={formik.handleSubmit}>
+                    <div className="email_box_input" >
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="email"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        {
+                            formik.touched.email && 
+                            formik.errors.email && 
+                            <p>
+                                {formik.errors.email}
+                            </p>
+                        }
+                    </div>
                     <ButtonCircle type='submit' />
                 </form>
             </div>
