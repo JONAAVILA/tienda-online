@@ -6,7 +6,7 @@ import confirmEmail from "../../../adapters/confirmEmail"
 import { saveEmail } from '../../../redux/actions/actions'
 import { validateEmail } from "../../../utils/validate"
 import LoadIcon from "../../icons/loader/loadIcon"
-import ButtonCircle from "../../buttons/ButtonCircle"
+import ButtonCircle from "../../buttons/buttonCircle/ButtonCircle"
 import './checkEmail.form.css'
 
 const CheckEmail = ()=>{

@@ -1,0 +1,15 @@
+.button_circle{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    margin-left:10px;
+    color:#003550;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color: #ffffff;
+    cursor:pointer
+}
+.natural{
+    background-color: #E4E4E4;
+}
