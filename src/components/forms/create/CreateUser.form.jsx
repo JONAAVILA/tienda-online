@@ -9,7 +9,7 @@ import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
 import { useState } from 'react'
 
 const CreateUser = ()=>{
-    const [modal, setmodal] = useState(true)
+    const [modal, setmodal] = useState(false)
     const email = useSelector(state => state.user.email)
     const dispath = useDispatch()
     const navigate = useNavigate()

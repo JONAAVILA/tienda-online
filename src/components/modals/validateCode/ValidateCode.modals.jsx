@@ -5,6 +5,7 @@ import { validateCode } from "../../../utils/validate"
 import LoadIcon from "../../icons/loader/loadIcon"
 import { useFormik } from "formik"
 import { useState } from "react"
+import confirmCode from "../../../adapters/confirmCode"
 
 const ValidateCode = ()=>{
     const email = useSelector(state => state.user.email)
@@ -16,7 +17,8 @@ const ValidateCode = ()=>{
         },
         validationSchema:validateCode,
         onSubmit: async (values)=>{
-            
+            const code = values.code
+            const resCode = await confirmCode(email)
         }
     })
 
