@@ -1,11 +1,16 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useFormik } from 'formik'
 import './createUser.form.css'
 import { validateUser } from '../../../utils/validate'
 import ButtonCircle from '../../buttons/ButtonCircle'
+import { saveUser } from '../../../redux/actions/actions'
+import { useNavigate } from 'react-router-dom'
 
 const CreateUser = ()=>{
+    const [modal, setmodal] = useState(true)
     const email = useSelector(state => state.user.email)
+    const dispath = useDispatch()
+    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues:{
@@ -22,7 +27,8 @@ const CreateUser = ()=>{
         },
         validationSchema:validateUser,
         onSubmit: async (values)=>{
-     
+            dispath(saveUser(values))
+            setmodal(!modal)
         }
     })
 

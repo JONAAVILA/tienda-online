@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import confirmEmail from "../../../adapters/confirmEmail"
-import saveEmail from '../../../redux/actions/actions'
+import { saveEmail } from '../../../redux/actions/actions'
 import { validateEmail } from "../../../utils/validate"
 import LoadIcon from "../../icons/loader/loadIcon"
 import ButtonCircle from "../../buttons/ButtonCircle"
