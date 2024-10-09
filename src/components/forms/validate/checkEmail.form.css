@@ -2,25 +2,6 @@
     display: flex;
     align-items: center;
 }
-.validate_section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    form{
-        display: flex;
-    }
-}
-.validate_tittle{
-    display: flex;
-    flex-direction: column;
-    h1{
-        font-size: 2rem;
-    }
-    h2{
-        width: 500px;
-    }
-}
 .email_box_input{
     position: relative;
     display: flex;

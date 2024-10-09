@@ -1,7 +1,7 @@
 import Navbar from './components/navbar/Navbar';
 import Landing from './views/landing/Landing';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
-import ValidateEmail from './views/validateEmail/ValidateEmail';
+import VerifyEmail from './views/verifyEmail/VerifyEmail.jsx'
 import User from './views/create/User';
 import Home from './views/home/Home.jsx';
 
@@ -11,7 +11,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Landing/>}/>
-        <Route path='/validate' element={<ValidateEmail/>}/>
+        <Route path='/validate' element={<VerifyEmail/>}/>
         <Route path='/create' element={<User/>}/>
         <Route path='/home' element={<Home/>}/>
       </Routes>
