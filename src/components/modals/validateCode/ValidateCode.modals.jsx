@@ -5,12 +5,13 @@ import { validateCode } from "../../../utils/validate"
 import LoadIcon from "../../icons/loader/loadIcon"
 import { useFormik } from "formik"
 import { useState } from "react"
-import sendCode from "../../../adapters/sendCode"
 import { confirmCode } from "../../../adapters/confirmCode"
+import { useNavigate } from "react-router-dom"
 
 const ValidateCode = ()=>{
     const email = useSelector(state => state.user.email)
     const [loader, setloader] = useState(false)
+    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues:{
@@ -18,10 +19,10 @@ const ValidateCode = ()=>{
         },
         validationSchema:validateCode,
         onSubmit: async (values)=>{
+            setloader(!loader)
             const code = values.code
-            console.log(code)
             const resConfirm = await confirmCode(code)
-            console.log('resconfirm:',resConfirm)
+            if(resConfirm) navigate('/home')
         }
     })
 
