@@ -1,10 +1,9 @@
 import axios from "axios"
 
-const URL = 'http://localhost:3000/singin/code'
+const URL = 'http://localhost:3000/singin/check/code'
 
-export default async function confirmCode (email){
-    const res = await axios.post(URL,email,{
+export async function confirmCode(code){
+    const res = await axios.post(URL,code,{
         withCredentials:true
     })
-    return res.data
 }

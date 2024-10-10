@@ -7,6 +7,7 @@ import { saveUser } from '../../../redux/actions/actions'
 import { useNavigate } from 'react-router-dom'
 import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
 import { useState } from 'react'
+import sendCode from '../../../adapters/sendCode'
 
 const CreateUser = ()=>{
     const [modal, setmodal] = useState(false)
@@ -30,7 +31,12 @@ const CreateUser = ()=>{
         validationSchema:validateUser,
         onSubmit: async (values)=>{
             dispath(saveUser(values))
-            setmodal(!modal)
+            const resCode = await sendCode()
+            if(resCode){
+                setmodal(!modal)
+                return
+            }
+            console.log('resCode:',resCode)
         }
     })
 

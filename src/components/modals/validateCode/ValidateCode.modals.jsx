@@ -5,7 +5,8 @@ import { validateCode } from "../../../utils/validate"
 import LoadIcon from "../../icons/loader/loadIcon"
 import { useFormik } from "formik"
 import { useState } from "react"
-import confirmCode from "../../../adapters/confirmCode"
+import sendCode from "../../../adapters/sendCode"
+import { confirmCode } from "../../../adapters/confirmCode"
 
 const ValidateCode = ()=>{
     const email = useSelector(state => state.user.email)
@@ -18,7 +19,9 @@ const ValidateCode = ()=>{
         validationSchema:validateCode,
         onSubmit: async (values)=>{
             const code = values.code
-            const resCode = await confirmCode(email)
+            console.log(code)
+            const resConfirm = await confirmCode(code)
+            console.log('resconfirm:',resConfirm)
         }
     })
 
@@ -27,8 +30,10 @@ const ValidateCode = ()=>{
             <div className="code_container"/ >
             <div className="code_box" >
                 <h1>valida tu código</h1>
-                <p>te lo enviamos a 📮 {email}, revisa tu casilla de spam 😎</p>
-                <form action="">
+                <p>te lo enviamos a {email}, revisa tu casilla de spam 😎</p>
+                <form
+                    onSubmit={formik.handleSubmit}
+                >
                     <div className="code_box_input" >
                         <input
                             type="text"
@@ -43,7 +48,7 @@ const ValidateCode = ()=>{
                             {loader && <LoadIcon size={35} />}
                         </div>
                     </div>
-                    <ButtonCircle color={'natural'} />
+                    <ButtonCircle type='submit' color={'natural'} />
                 </form>
                 <div className="code_error" >
                     {formik.touched.code && formik.errors.code && <p>{formik.errors.code}</p>}
