@@ -2,6 +2,7 @@ import { useFormik } from 'formik';
 import './login.form.css';
 import Button from '../../buttons/customButton/Button';
 import { validateLogin } from '../../../utils/validate';
+import postLogin from '../../../adapters/postLogin.js';
 
 const LoginForm = ()=>{
     const formik = useFormik({
@@ -11,7 +12,8 @@ const LoginForm = ()=>{
         },
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
-        
+           const res = await postLogin(values)
+           console.log(res)
         }
     })
     return(
