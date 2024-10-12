@@ -1,0 +1,16 @@
+.login_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.box_login_errors{
+    height: 10px;
+    margin-bottom: 15px;
+    p{
+        font-size: .6rem;
+        color: #ff6262;
+        padding-left: 12px;
+    }
+}
