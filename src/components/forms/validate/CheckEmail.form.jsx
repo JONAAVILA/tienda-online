@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import confirmEmail from "../../../adapters/confirmEmail"
 import { saveEmail } from '../../../redux/actions/actions'
 import { validateEmail } from "../../../utils/validate"
-import LoadIcon from "../../icons/loader/loadIcon"
+import LoadIcon from "../../icons/loader/LoadIcon"
 import ButtonCircle from "../../buttons/buttonCircle/ButtonCircle"
 import './checkEmail.form.css'
 
@@ -23,7 +23,7 @@ const CheckEmail = ()=>{
             setloader(!loader)
             const check = await confirmEmail(values)
             console.log('check:',check)
-            if(check === true){
+            if(check){
                 dispath(saveEmail(values.email))
                 setloader(!loader)
                 navigate('/create')

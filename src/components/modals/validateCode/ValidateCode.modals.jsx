@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import './validateCode.modals.css'
 import ButtonCircle from "../../buttons/buttonCircle/ButtonCircle"
 import { validateCode } from "../../../utils/validate"
-import LoadIcon from "../../icons/loader/loadIcon"
+import LoadIcon from "../../icons/loader/LoadIcon"
 import { useFormik } from "formik"
 import { useState } from "react"
 import { confirmCode } from "../../../adapters/confirmCode"

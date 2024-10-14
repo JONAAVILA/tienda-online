@@ -1,6 +1,4 @@
 import './user.css'
-import { useState } from "react"
-import LoadIcon from "../../components/icons/loader/loadIcon"
 import CreateUser from "../../components/forms/create/CreateUser.form"
 
 const User = ()=>{
