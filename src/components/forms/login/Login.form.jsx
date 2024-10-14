@@ -6,10 +6,12 @@ import postLogin from '../../../adapters/postLogin.js';
 import LoadIcon from '../../icons/loader/LoadIcon.jsx'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Alert from '../../modals/alerts/Alert.modal.jsx'
 
 const LoginForm = ()=>{
     const navigate = useNavigate()
     const [loader, setloader] = useState(false)
+    const [alert, setalert] = useState('')
 
     const formik = useFormik({
         initialValues:{
@@ -18,18 +20,22 @@ const LoginForm = ()=>{
         },
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
-           const res = await postLogin(values)
-           setloader(!loader)
-           if(res){
+            setloader(!loader)
+            const res = await postLogin(values)
+            if(res){
                 setloader(!loader)
                 navigate('/home')
-           }
+                return
+            }
+            setloader(false)
+            setalert('Clave o correo incorrecto')
         }
     })
     return(
         <div>
             <div className='login_loader' >
                 {loader && <LoadIcon/>}
+                {alert && <Alert children={alert} />}
             </div>
             <form
                 onSubmit={formik.handleSubmit}
