@@ -22,12 +22,15 @@ const CheckEmail = ()=>{
         onSubmit: async (values)=>{
             setloader(!loader)
             const check = await confirmEmail(values)
-            console.log(check)
-            dispath(saveEmail(values.email))
-            if(check){
+            console.log('check:',check)
+            if(check === true){
+                dispath(saveEmail(values.email))
                 setloader(!loader)
                 navigate('/create')
+                return
             }
+            setloader(!loader)
+            navigate('/login')
         }
     })
 
