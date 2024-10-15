@@ -7,11 +7,15 @@ import LoadIcon from '../../icons/loader/LoadIcon.jsx'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '../../modals/alerts/Alert.modal.jsx'
+import ValidateCode from '../../modals/validateCode/ValidateCode.modals.jsx';
+import { saveEmail } from '../../../redux/actions/actions.js';
+import sendCode from '../../../adapters/sendCode.js';
 
 const LoginForm = ()=>{
     const navigate = useNavigate()
     const [loader, setloader] = useState(false)
     const [alert, setalert] = useState('')
+    const [modal, setmodal] = useState(false)
 
     const formik = useFormik({
         initialValues:{
@@ -22,10 +26,15 @@ const LoginForm = ()=>{
         onSubmit: async (values)=>{
             setloader(!loader)
             const res = await postLogin(values)
-            if(res){
+            if(res === true){
                 setloader(!loader)
                 navigate('/home')
                 return
+            }
+            if(res === 'validate user'){
+                await sendCode()
+                saveEmail(values.email)
+                setmodal(!modal)
             }
             setloader(false)
             setalert('Clave o correo incorrecto')
@@ -36,6 +45,7 @@ const LoginForm = ()=>{
             <div className='login_loader' >
                 {loader && <LoadIcon/>}
                 {alert && <Alert children={alert} />}
+                {modal && <ValidateCode validate={true} email={formik.values.email} />}
             </div>
             <form
                 onSubmit={formik.handleSubmit}

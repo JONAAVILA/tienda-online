@@ -5,7 +5,7 @@ import './navbar.css'
 const Navbar = ()=>{
     return(
         <section className="navbar_section" >
-            <Link to={'/'} >
+            <Link to={'/profile'} >
                 <div className="nav_profile" />
             </Link>
             <div className="nav_box_pages" >

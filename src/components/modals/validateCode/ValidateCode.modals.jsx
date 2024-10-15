@@ -9,7 +9,7 @@ import { confirmCode } from "../../../adapters/confirmCode"
 import { useNavigate } from "react-router-dom"
 import postUser from "../../../adapters/postUser"
 
-const ValidateCode = ()=>{
+const ValidateCode = ({validate,email})=>{
     const user = useSelector(state => state.user)
     const [loader, setloader] = useState(false)
     const navigate = useNavigate()
@@ -23,10 +23,12 @@ const ValidateCode = ()=>{
             setloader(!loader)
             const code = values.code
             const resConfirm = await confirmCode(code)
-            if(resConfirm === true){
+            if(!validate && resConfirm === true){
                 const resCreate = await postUser(user)
                 if(resCreate === 'user created') navigate('/home')
+                return
             }
+            if(validate && resConfirm === true) navigate('/home')
         }
     })
 
@@ -35,7 +37,12 @@ const ValidateCode = ()=>{
             <div className="code_container"/ >
             <div className="code_box" >
                 <h1>valida tu código</h1>
-                <p>te lo enviamos a {user.email}, revisa tu casilla de spam 😎</p>
+                {email ? (
+                            <p>te lo enviamos a {email}, revisa tu casilla de spam 😎</p>
+                        ):(
+                            <p>te lo enviamos a {user.email}, revisa tu casilla de spam 😎</p>
+                        )
+                    }
                 <form
                     onSubmit={formik.handleSubmit}
                 >

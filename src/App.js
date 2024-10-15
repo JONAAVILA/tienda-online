@@ -5,6 +5,7 @@ import VerifyEmail from './views/verifyEmail/VerifyEmail.jsx'
 import User from './views/create/User';
 import Home from './views/home/Home.jsx';
 import Login from './views/login/Login.jsx';
+import Profile from './views/profile/Profile.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/create' element={<User/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
     </BrowserRouter>
   )
