@@ -8,7 +8,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '../../modals/alerts/Alert.modal.jsx'
 import ValidateCode from '../../modals/validateCode/ValidateCode.modals.jsx';
-import { saveEmail } from '../../../redux/actions/actions.js';
 import sendCode from '../../../adapters/sendCode.js';
 
 const LoginForm = ()=>{
@@ -33,7 +32,6 @@ const LoginForm = ()=>{
             }
             if(res === 'validate user'){
                 await sendCode()
-                saveEmail(values.email)
                 setmodal(!modal)
             }
             setloader(false)
@@ -45,7 +43,7 @@ const LoginForm = ()=>{
             <div className='login_loader' >
                 {loader && <LoadIcon/>}
                 {alert && <Alert children={alert} />}
-                {modal && <ValidateCode validate={true} email={formik.values.email} />}
+                {modal && <ValidateCode validate={true} email={formik.values.email} password={formik.values.password} />}
             </div>
             <form
                 onSubmit={formik.handleSubmit}

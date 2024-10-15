@@ -8,8 +8,9 @@ import { useState } from "react"
 import { confirmCode } from "../../../adapters/confirmCode"
 import { useNavigate } from "react-router-dom"
 import postUser from "../../../adapters/postUser"
+import refresh from "../../../adapters/refresh"
 
-const ValidateCode = ({validate,email})=>{
+const ValidateCode = ({validate,email,password})=>{
     const user = useSelector(state => state.user)
     const [loader, setloader] = useState(false)
     const navigate = useNavigate()
@@ -20,15 +21,26 @@ const ValidateCode = ({validate,email})=>{
         },
         validationSchema:validateCode,
         onSubmit: async (values)=>{
+            console.log(validate)
             setloader(!loader)
             const code = values.code
             const resConfirm = await confirmCode(code)
+            console.log('rescode:',resConfirm)  
+
             if(!validate && resConfirm === true){
                 const resCreate = await postUser(user)
                 if(resCreate === 'user created') navigate('/home')
                 return
             }
-            if(validate && resConfirm === true) navigate('/home')
+            if(validate && resConfirm === true){
+                const res = await refresh(password)
+                console.log('refresh:',res)
+                if(res === 'access'){
+                    navigate('/home')
+                    return
+                }
+                navigate('/login')
+            }
         }
     })
 
