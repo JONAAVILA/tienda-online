@@ -26,13 +26,13 @@ const LoginForm = ()=>{
             setloader(!loader)
             const res = await postLogin(values)
             if(res === true){
-                setloader(!loader)
                 navigate('/home')
                 return
             }
             if(res === 'validate user'){
                 await sendCode()
                 setmodal(!modal)
+                return
             }
             setloader(false)
             setalert('Clave o correo incorrecto')

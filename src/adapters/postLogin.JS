@@ -11,6 +11,6 @@ export default async function postLogin(values){
     const res = await axios.post(URL,user,{
         withCredentials:true
     })
-    console.log(res.data)
+    console.log('postlogin:',res.data)
     return res.data
 }

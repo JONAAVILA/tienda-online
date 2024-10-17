@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux"
-import './validateCode.modals.css'
-import ButtonCircle from "../../buttons/buttonCircle/ButtonCircle"
 import { validateCode } from "../../../utils/validate"
-import LoadIcon from "../../icons/loader/LoadIcon"
 import { useFormik } from "formik"
 import { useState } from "react"
 import { confirmCode } from "../../../adapters/confirmCode"
 import { useNavigate } from "react-router-dom"
-import postUser from "../../../adapters/postUser"
 import refresh from "../../../adapters/refresh"
+import postUser from "../../../adapters/postUser"
+import ButtonCircle from "../../buttons/buttonCircle/ButtonCircle"
+import LoadIcon from "../../icons/loader/LoadIcon"
+import './validateCode.modals.css'
+import postLogin from "../../../adapters/postLogin"
 
 const ValidateCode = ({validate,email,password})=>{
     const user = useSelector(state => state.user)
@@ -21,11 +22,10 @@ const ValidateCode = ({validate,email,password})=>{
         },
         validationSchema:validateCode,
         onSubmit: async (values)=>{
-            console.log(validate)
             setloader(!loader)
+
             const code = values.code
             const resConfirm = await confirmCode(code)
-            console.log('rescode:',resConfirm)  
 
             if(!validate && resConfirm === true){
                 const resCreate = await postUser(user)
@@ -35,7 +35,7 @@ const ValidateCode = ({validate,email,password})=>{
             if(validate && resConfirm === true){
                 const res = await refresh(password)
                 console.log('refresh:',res)
-                if(res === 'access'){
+                if(res === 'access'){ 
                     navigate('/home')
                     return
                 }
